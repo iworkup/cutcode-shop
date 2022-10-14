@@ -1,21 +1,11 @@
-## Install
+## Первичная установка одной командой
 
-- `php artisan shop:install` with:
-
-`php artisan storage:link`
-
-`php artisan migrate`
-
-## Install advanced
+`php artisan shop:install` - включает в себя:
 
 - `php artisan storage:link`
-- set `FILESYSTEM_DISK=public` to .env
-- `composer require barryvdh/laravel-debugbar --dev`
-- `require laravel/telescope`
-- `php artisan telescope:install`
 - `php artisan migrate`
-- `yarn`
-- `yarn add -D tailwindcss`
-- `yarn add @tailwindcss/line-clamp sass autoprefixer postcss`
 
+## Доп настройка
+
+- Добавить `FILESYSTEM_DISK=public` в .env
 
