@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 trait HasSlug
 {
 
-    protected static function bootHasSlug()
+    protected static function bootHasSlug(): void
     {
-        parent::boot();
-
         static::creating(function (Model $model) {
             $model->slug = $model->slug ?? str($model->{self::slugFrom()})->append(time())->slug();
         });
