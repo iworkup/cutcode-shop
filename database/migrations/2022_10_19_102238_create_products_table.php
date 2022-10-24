@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->unsignedInteger('price')->default(0);
             $table->timestamps();
 
-            $table->foreignIdFor(Brand::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignIdFor(Brand::class)->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
         });
 
         Schema::create('category_product', function (Blueprint $table) {
