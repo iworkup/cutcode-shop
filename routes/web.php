@@ -9,9 +9,9 @@ Route::get('/', HomeController::class)->name('home');
 Route::controller(AuthController::class)->group(function () {
 
     Route::get('/login', 'login')->name('login');
-    Route::post('/login', 'signIn')->name('signIn');
+    Route::post('/login', 'signIn')->middleware('throttle:auth')->name('signIn');
     Route::get('/reg', 'registration')->name('reg');
-    Route::post('/reg', 'signUp')->name('signUp');
+    Route::post('/reg', 'signUp')->middleware('throttle:auth')->name('signUp');
     Route::delete('/logout', 'logOut')->name('logOut');
 
     Route::get('/forgot-password', 'forgot')->middleware('guest')->name('password.request');
