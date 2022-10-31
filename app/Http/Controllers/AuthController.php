@@ -23,11 +23,6 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function registration(): Factory|View|Application
-    {
-        return view('auth.registration');
-    }
-
     public function signIn(SignInFormRequest $request): RedirectResponse
     {
 
@@ -40,6 +35,11 @@ class AuthController extends Controller
         $request->session()->regenerate();
         return redirect()->intended(route('home'));
 
+    }
+
+    public function registration(): Factory|View|Application
+    {
+        return view('auth.registration');
     }
 
     public function signUp(SignUpFormRequest $request): RedirectResponse
