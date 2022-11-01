@@ -11,7 +11,7 @@
 
     @auth
 
-        <form method="post" action="{{ route('logOut') }}">
+        <form method="post" action="{{ route('logout') }}">
             @csrf
             @method('DELETE')
             <button type="submit">Выйти</button>
@@ -24,7 +24,7 @@
             <a href="{{ route('login') }}">Login</a> | <a href="{{ route('reg') }}">Reg</a>
         </p>
         <p>
-            <a href="{{ route('password.request') }}">Recovery pass</a>
+            <a href="{{ route('forgot') }}">Recovery pass</a>
         </p>
     @endguest
 

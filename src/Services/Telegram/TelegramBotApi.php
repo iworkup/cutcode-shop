@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Telegram;
+namespace Services\Telegram;
 
 use App\Exceptions\TelegramBotApiException;
 use Illuminate\Support\Facades\Http;
@@ -27,7 +27,7 @@ class TelegramBotApi
             report(new TelegramBotApiException($e->getMessage()));
 
             return false;
-            
+
         }
     }
 
