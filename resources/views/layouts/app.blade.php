@@ -10,13 +10,21 @@
 </head>
 <body class="antialiased">
 
-@if($message = flash()->get())
-    <div class="text-center py-16 lg:py-20 {{ $message->class() }}">
-        {{ $message->message() }}
-    </div>
-@endif
+@include('shared.flash')
 
-@yield('content')
+@include('shared.header')
+
+<main class="py-16 lg:py-20">
+    <div class="container">
+
+        @yield('content')
+
+    </div>
+</main>
+
+@include('shared.footer')
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 </body>
 </html>
